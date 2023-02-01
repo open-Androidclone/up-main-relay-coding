@@ -1,35 +1,46 @@
 #include <ostream>
 #include <iostream>
 #include <memory>
+#include <stdlib.h>
 #include <stdio.h>
 #ifndef MEMORY
 #define MEMORY  0x0066ccff
 #endif
 using namespace std;
-int memorytest(void){
-  int *p = new int[8];
+  
+void memorytest(void){
+  char* p = new char[8];
   /*
    * create a new memory as linux 
    * kernel virtual memory  
    * next up main is kde-yyds
    * androidroot9@outlook.com
   */ 
+  char* hex = 0x0066ccff;
   while(1){
-    /*while loop for memory */
-    p  -> 0x0066ccff 
-    if(&p ==MEMORY){
-      /* if memory = 0x0066ccff 
+    /*w
+   while loop for memory */
+    p = &hex;
+    FILE* file=fopen("ow.bin","wb");
+  /*
+  create a bin file
+  */
+  fprintf(file,"%#",&p);
+    if(&p == &hex){
+      /* if memory = 0x0066ccff   
       there break loop */
+      fclose(file);
+      delete[] p;
       break;
     }
   }
-  cout<<"%d"<<&p<<endl;
-  return p;
+  cout <<"debug mod is enable "<<endl;
 }
+
 int main(void){
   memorytest();
   /*
-  *call memorytest
+  *call meqmorytest
   */
   return 0;
 }
