@@ -1,46 +1,41 @@
-#include <ostream>
-#include <iostream>
-#include <memory>
-#include <stdlib.h>
-#include <stdio.h>
-#ifndef MEMORY
-#define MEMORY  0x0066ccff
-#endif
-using namespace std;
-  
-void memorytest(void){
-  char* p = new char[8];
+#include "memory.hpp"
+void memorytest(void) {
+  int *p = new int[8];
   /*
-   * create a new memory as linux 
-   * kernel virtual memory  
+   * create a new memory as linux
+   * kernel virtual memory
    * next up main is kde-yyds
-   * androidroot9@outlook.com
-  */ 
-  char* hex = 0x0066ccff;
-  while(1){
-    /*w
-   while loop for memory */
-    p = &hex;
-    FILE* file=fopen("ow.bin","wb");
-  /*
+   */
+  while (1) {
+    for (int i = 0; i < 8; i++) {
+      p[i] = hex;
+      FILE  *file = fopen("ow.bin", "wb");
+      fprintf(file, "%d", p[i]);
+      /*
+   while loop for m
   create a bin file
   */
-  fprintf(file,"%#",&p);
-    if(&p == &hex){
-      /* if memory = 0x0066ccff   
-      there break loop */
-      fclose(file);
-      delete[] p;
-      break;
+      if (p[i] == hex) {
+        cout << p[i] << endl;
+        delete[] p;
+        cout << "memory test success" << endl;
+        fclose(file);
+        break;
+      }
     }
   }
-  cout <<"debug mod is enable "<<endl;
-}
-
-int main(void){
-  memorytest();
-  /*
-  *call meqmorytest
-  */
-  return 0;
-}
+    cout << "debug mod is enable " << endl;
+  }
+int main(void) {
+    int i = 0;
+    while (1) {
+      memorytest();
+      i++;
+      sleep(1);
+      if (i == 20) {
+        break;
+      }
+    }
+    return 0;
+    
+  }
