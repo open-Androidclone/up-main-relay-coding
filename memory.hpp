@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #ifndef MEMORY 
-#define MEMORY (0x0066ccff)
+#define MEMORY 0x0066ccff
 #endif
 using namespace std;
-void memorytest(void);
+unsigned long hex = 0x0066ccff
 #endif

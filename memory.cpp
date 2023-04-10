@@ -9,10 +9,11 @@ void memorytest(void) {
    * kernel virtual memory
    * next up main is kde-yyds
    */
+  while (1) {
     for (int i = 0; i < 8; i++) {
-      p[i] = hexOfVirtualMeMory;
-      FILE  *file = fopen("ow.bin", "ab");
-      fprintf(file, "%ld" "\r\n", p[i]);
+      p[i] = hex;
+      FILE  *file = fopen("ow.bin", "wb");
+      fprintf(file, "%d", p[i]);
       /*
    while loop for m
   create a bin file
@@ -20,11 +21,17 @@ void memorytest(void) {
     cout << p[i] << endl;
       if (&p[i] == &hexOfVirtualMeMory) {
         delete[] p;
+      if (p[i] == hex) {
+        cout << p[i] << endl;
+        delete[] p;
+        cout << "memory test success" << endl;
         fclose(file);
         break;
       }
     }
   
+    cout << "debug mod is enable " << endl;
+  }
     cout << "debug mod is enable " << endl;
   }
 int main(void) {
@@ -40,5 +47,12 @@ int main(void) {
       }
     }
       return 0;
+      i++;
+      sleep(1);
+      if (i == 20) {
+        break;
+      }
+    }
+    return 0;
     
   }
