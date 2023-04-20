@@ -9,5 +9,5 @@
 #define MEMORY 0x0066ccff
 #endif
 using namespace std;
-unsigned long hex = 0x0066ccff
+unsigned long hexOfVirtualMeMory = 0x0066ccff
 #endif
