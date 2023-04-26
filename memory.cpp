@@ -1,57 +1,35 @@
 #include "memory.hpp"
-
-auto mauemorytest(void)
+void memorytest()
 {
-  unsigned long *p = new unsigned long[8];
-
-  /*
-   * create a new memory as linux
-   * kernel virtual memory
-   * next up main is kde-yyds
-   */
-
-  while (1)
-  {
+    FILE* file = fopen("java.bin","rw");
+    long* p = new long[8];
     for (int i = 0; i < 8; i++)
     {
-      p[i] = hexOfVirtualMeMory;
-      FILE *file = fopen("ow.bin", "wb");
-      fprintf(file, "%d", p[i]);
-      /*
-   while loop for m
-  create a bin file
-  */
-      cout << p[i] << endl;
-      if (&p[i] == &hexOfVirtualMeMory)
-      {
-        delete[] p;
-        if (p[i] == hex)
-        {
-          cout << p[i] << endl;
-          delete[] p;
-          cout << "memory test success" << endl;
-          fclose(file);
-          break;
-        }
-      }
-
-      cout << "debug mod is enable " << endl;
+        p[i]= hexOfv;
+        fwrite(&p[i],sizeof(long),1,file);
+        cout << p[i] << endl;
     }
-    cout << "debug mod is enable " << endl;
-  }
-  int main(void)
-  {
-    int i = 0;
-    while (1)
+    
+    bool greaterThanHexOfv = false;
+    for (int i = 0; i < 8; i++)
     {
-      memorytest();
-      i++;
-      sleep(1);
-      if (i == 20)
-      {
-        cout << "memory test success" << endl;
-        break;
-      }
+        if (p[i] > hexOfv)
+        {
+            greaterThanHexOfv = true;
+            break;
+        }
     }
+    
+    if (greaterThanHexOfv)
+    {
+        fclose(file)
+        delete[] p;
+        p = nullptr;
+    }
+}
+
+int main()
+{
+    memorytest();
     return 0;
-  }
+}
