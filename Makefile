@@ -3,8 +3,7 @@ all: main main-debug
 CXX = clang++
 CXXFLAGS = -g -Wall -static
 
-SRCS = %.cpp
-
+SRCS = memory.cpp
 
 main: $(SRCS)
 	$(CXX) $(CXXFLAGS) $(SRCS) -o "$@"
