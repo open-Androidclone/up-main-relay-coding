@@ -1,6 +1,6 @@
 #ifndef WORLD_HPP
 #define WORLD_HPP
-i#include "AbstractAttributableThing.hpp"
+#include "AbstractAttributableThing.hpp"
 #include <vector>
 #include <memory>
 #include <algorithm>
