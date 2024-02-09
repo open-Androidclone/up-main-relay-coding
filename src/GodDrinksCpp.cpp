@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+#include "allinone.hpp"
 // Assume necessary headers for Lovable, World, etc., are included here.
 
 class GodDrinksCpp {
