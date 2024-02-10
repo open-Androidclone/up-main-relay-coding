@@ -1,11 +1,10 @@
 #ifndef WORLD_HPP
 #define WORLD_HPP
-i#include "AbstractAttributableThing.hpp"
 #include <vector>
 #include <memory>
 #include <algorithm>
 #include <iostream>
-
+#include "allinone.hpp"
 class Thing; // Forward declaration to make Thing known
 class Lovable; // Forward declaration for Lovable, assuming it's derived from Thing
 
