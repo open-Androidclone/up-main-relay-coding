@@ -31,7 +31,7 @@
 /* 其他 */
 #include "Memory.hpp"
 #include "Pose.hpp"
-#include "would.hpp" /* 确认这个文件名是否正确，因为它看起来有些不寻常 */
+#include "would.hpp" 
 
 #endif // ALLINONE_HPP
 
